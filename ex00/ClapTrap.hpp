@@ -18,9 +18,8 @@ class ClapTrap
 		unsigned int	getHP() const;
 		unsigned int	getEnergy() const;
 		unsigned int	getAttackDamage() const;
-		std::string		getName() const;
 
-	private:
+	protected:
 		std::string				_name;
 		unsigned int			_hit_point;
 		unsigned int			_energy_point;
