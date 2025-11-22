@@ -18,6 +18,7 @@ class ClapTrap
 		unsigned int	getHP() const;
 		unsigned int	getEnergy() const;
 		unsigned int	getAttackDamage() const;
+		void			debug() const;
 
 	protected:
 		std::string				_name;

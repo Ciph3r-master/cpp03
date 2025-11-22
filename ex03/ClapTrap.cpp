@@ -129,3 +129,13 @@ unsigned int ClapTrap::getAttackDamage() const
 {
 	return this->_attack_damage;
 }
+
+void	ClapTrap::debug() const
+{
+	std::cout << "-------------------------\n" << std::endl;
+	std::cout << "Name : " << this->_name << std::endl;
+	std::cout << "HP : " << this->_hit_point << std::endl;
+	std::cout << "Energy : " << this->_energy_point << std::endl;
+	std::cout << "Attack Damage : " << this->_attack_damage << std::endl;
+	std::cout << "\n-------------------------" << std::endl;
+}

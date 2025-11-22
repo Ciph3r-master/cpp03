@@ -8,39 +8,41 @@ DiamondTrap::DiamondTrap() : ClapTrap("Unknown_clap_name")
 {
 	ScavTrap	Scavtmp;
 	FragTrap	Fragtmp;
+
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 	this->_name = "Unknown";
 	this->_hit_point = Fragtmp.getHP();
 	this->_energy_point = Scavtmp.getEnergy();
 	this->_attack_damage = Fragtmp.getAttackDamage();
-
-	std::cout << "Hit point: " << this->_hit_point << std::endl;
-	std::cout << "Energy: " << this->_energy_point << std::endl;
-	std::cout << "AD: " <<  this->_attack_damage << std::endl;
-
-	std::cout << "Hit point: " << FragTrap::_hit_point << std::endl;
-	std::cout << "Energy: " << ScavTrap::_energy_point << std::endl;
-	std::cout << "AD: " <<  FragTrap::_attack_damage << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(std::string name)
+	: ClapTrap(name + "_clap_name")
 {
+	ScavTrap Scavtmp;
+	FragTrap Fragtmp;
+
 	std::cout << "DiamondTrap constructor called" << std::endl;
 	this->_name = name;
+	this->_hit_point = Fragtmp.getHP();
+	this->_energy_point = Scavtmp.getEnergy();
+	this->_attack_damage = Fragtmp.getAttackDamage();
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other)
+DiamondTrap::DiamondTrap(const DiamondTrap &other) 
+	: ClapTrap(other), ScavTrap(other), FragTrap(other)
 {
+	this->_name = other.getName();
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
 
 DiamondTrap&	DiamondTrap::operator=(const DiamondTrap &other)
 {
 	std::cout << "DiamondTrap copy operator called" << std::endl;
-	if (this == &other)
-		return (*this);
-
-	//TODO
+	this->_name = other.getName();
+	this->_hit_point = other.getHP();
+	this->_attack_damage = other.getAttackDamage();
+	this->_energy_point = other.getEnergy();
 	return (*this);
 }
 
@@ -58,4 +60,20 @@ void	DiamondTrap::whoAmI()
 void	DiamondTrap::attack(const std::string &name)
 {
 	ScavTrap::attack(name);
+}
+
+std::string	DiamondTrap::getName() const
+{
+	return this->_name;
+}
+
+void	DiamondTrap::debug() const
+{
+	std::cout << "-------------------------\n"
+			  << std::endl;
+	std::cout << "Name : " << this->_name << std::endl;
+	std::cout << "HP : " << this->_hit_point << std::endl;
+	std::cout << "Energy : " << this->_energy_point << std::endl;
+	std::cout << "Attack Damage : " << this->_attack_damage << std::endl;
+	std::cout << "\n-------------------------" << std::endl;
 }

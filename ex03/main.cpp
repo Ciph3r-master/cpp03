@@ -13,13 +13,22 @@ int	main()
 	// nono2.takeDamage(10);
 	// nono2.beRepaired(100);
 
-	DiamondTrap bb;
+	DiamondTrap def;
+	DiamondTrap name("NAME");
+	DiamondTrap copy(name);
+	DiamondTrap tmp("TMP");
+	DiamondTrap opCopy;
 
-	bb.whoAmI();
-	bb.guardGate();
-	bb.highFivesGuys();
-	bb.attack("Theo le sorcier");
-	bb.beRepaired(1);
+	opCopy = tmp;
+
+	def.debug();
+	name.debug();
+	copy.debug();
+	opCopy.debug();
+
+	def.guardGate();
+	def.highFivesGuys();
+	copy.attack("Bernard");
 	// nono.highFivesGuys();
 	// FragTrap walle("Wall-E");
 	// FragTrap eve("Eve");
