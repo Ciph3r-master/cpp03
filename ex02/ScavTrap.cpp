@@ -6,14 +6,16 @@ ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap constructor called" << std::endl;
 	this->_hit_point = 100;
-	this->_attack_damage = 50;
+	this->_attack_damage = 20;
 	this->_energy_point = 20;
 }
 
-ScavTrap::ScavTrap(std::string name, unsigned int hp, 
-	unsigned int ad, unsigned int energy) : ClapTrap(name, hp, ad, energy)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap constructor called" << std::endl;
+	this->_hit_point = 100;
+	this->_attack_damage = 20;
+	this->_energy_point = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)

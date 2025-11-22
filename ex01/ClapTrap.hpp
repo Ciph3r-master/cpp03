@@ -7,7 +7,7 @@ class ClapTrap
 {
 	public:
 		ClapTrap();
-		ClapTrap(std::string name, unsigned int hp, unsigned int ad, unsigned int energy);
+		ClapTrap(std::string name);
 		~ClapTrap();
 		ClapTrap(const ClapTrap &obj);
 		ClapTrap&		operator=(const ClapTrap& obj);
@@ -18,6 +18,7 @@ class ClapTrap
 		unsigned int	getHP() const;
 		unsigned int	getEnergy() const;
 		unsigned int	getAttackDamage() const;
+		void			debug() const;
 
 	protected:
 		std::string				_name;

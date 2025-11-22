@@ -10,14 +10,13 @@ ClapTrap::ClapTrap()
 	this->_energy_point = 10;
 }
 
-ClapTrap::ClapTrap(std::string name, unsigned int hp,
-	unsigned int ad, unsigned int energy)
+ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << "ClapTrap constructor called" << std::endl;
 	this->_name = name;
-	this->_hit_point = hp;
-	this->_attack_damage = ad;
-	this->_energy_point = energy;
+	this->_hit_point = 10;
+	this->_attack_damage = 0;
+	this->_energy_point = 10;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj) : _name(obj.getName())
@@ -129,4 +128,14 @@ unsigned int ClapTrap::getEnergy() const
 unsigned int ClapTrap::getAttackDamage() const
 {
 	return this->_attack_damage;
+}
+
+void	ClapTrap::debug() const
+{
+	std::cout << "-------------------------\n" << std::endl;
+	std::cout << "Name : " << this->_name << std::endl;
+	std::cout << "HP : " << this->_hit_point << std::endl;
+	std::cout << "Energy : " << this->_energy_point << std::endl;
+	std::cout << "Attack Damage : " << this->_attack_damage << std::endl;
+	std::cout << "\n-------------------------" << std::endl;
 }

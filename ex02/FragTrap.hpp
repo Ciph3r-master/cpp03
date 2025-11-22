@@ -3,11 +3,11 @@
 
 # include "ScavTrap.hpp"
 
-class FragTrap : public ScavTrap
+class FragTrap : public ClapTrap
 {
 	public:
 		FragTrap();
-		FragTrap(std::string name, unsigned int hp, unsigned int ad, unsigned int energy);
+		FragTrap(std::string name);
 		~FragTrap();
 		FragTrap(const FragTrap &obj);
 		FragTrap	&operator=(const FragTrap &obj);

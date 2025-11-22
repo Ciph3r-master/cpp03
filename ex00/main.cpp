@@ -2,24 +2,27 @@
 
 int	main()
 {
-	ClapTrap nono("Nono", 10, 50, 17);
-	ClapTrap nono2(nono);
+	ClapTrap clap("ClapTrap");
 
-	nono.takeDamage(15);
-	nono2.attack("Nono");
-	nono2.takeDamage(10);
-	nono2.beRepaired(100);
+	clap.debug();
+	clap.attack("FragTrap");
+	clap.takeDamage(10);
+	clap.beRepaired(1);
 
-	ClapTrap walle("Wall-E", 100, 1, 100);
-	ClapTrap eve("Eve", 100, 255, 5);
+	ClapTrap copy(clap);
 
-	walle.attack("Eve");
-	eve.takeDamage(walle.getAttackDamage());
-	eve.beRepaired(1);
-	eve.attack("Wall-E");
-	walle.takeDamage(eve.getAttackDamage());
-	eve.beRepaired(1);
-	eve.beRepaired(1);
-	eve.beRepaired(1);
-	eve.beRepaired(1);
+	copy.debug();
+	copy.attack("FragTrap");
+	copy.takeDamage(10);
+	copy.beRepaired(1);
+
+	ClapTrap tmp("TMP");
+	ClapTrap opCopy;
+
+	opCopy = tmp;
+
+	opCopy.debug();
+	opCopy.attack("FragTrap");
+	opCopy.takeDamage(10);
+	opCopy.beRepaired(1);
 }
