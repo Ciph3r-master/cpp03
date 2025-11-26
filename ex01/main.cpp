@@ -17,4 +17,31 @@ int	main()
 	scav.attack("FragTrap");
 	scav.takeDamage(10);
 	scav.beRepaired(1);
+
+	{
+		ScavTrap scav("ScavTrap");
+
+		scav.debug();
+		scav.attack("FragTrap");
+		scav.takeDamage(10);
+		scav.beRepaired(1);
+		scav.debug();
+
+		ScavTrap copy(scav);
+
+		copy.debug();
+
+		ScavTrap tmp("TMP");
+		ScavTrap opCopy;
+
+		opCopy = tmp;
+
+		opCopy.debug();
+		opCopy.attack("FragTrap");
+		opCopy.takeDamage(10);
+		opCopy.beRepaired(1);
+		opCopy.debug();
+
+
+	}
 }

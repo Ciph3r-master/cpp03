@@ -26,4 +26,31 @@ int	main()
 	frag.attack("FragTrap");
 	frag.takeDamage(10);
 	frag.beRepaired(1);
+
+	{
+		FragTrap frag("FragTrap");
+
+		frag.debug();
+		frag.attack("Bill Cipher");
+		frag.takeDamage(10);
+		frag.beRepaired(1);
+		frag.debug();
+
+		FragTrap copy(frag);
+
+		copy.debug();
+
+		FragTrap tmp("TMP");
+		FragTrap opCopy;
+
+		opCopy = tmp;
+
+		opCopy.debug();
+		opCopy.attack("FragTrap");
+		opCopy.takeDamage(10);
+		opCopy.beRepaired(1);
+		opCopy.debug();
+
+
+	}
 }

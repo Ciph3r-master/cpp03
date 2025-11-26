@@ -39,10 +39,8 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other)
 DiamondTrap&	DiamondTrap::operator=(const DiamondTrap &other)
 {
 	std::cout << "DiamondTrap copy operator called" << std::endl;
+	ClapTrap::operator=(other);
 	this->_name = other.getName();
-	this->_hit_point = other.getHP();
-	this->_attack_damage = other.getAttackDamage();
-	this->_energy_point = other.getEnergy();
 	return (*this);
 }
 
